@@ -4,6 +4,14 @@ Retest provides a suite of functions specifically designed for testing applicati
 
 Key features include `click`, `fill`, and `datafy` which help emulate and validate diverse user interactions within your components. This powerful toolkit streamlines the testing process, thereby enhancing the overall reliability and robustness of your applications.
 
+## Installation
+
+#### Git deps
+```edn
+com.health-samurai/retest {:git/url "https://github.com/HealthSamurai/retest.git"
+                           :sha "d5b2732a79d10e9847d5e4b1e208be616d284b96"}}}
+```
+
 ## Features
 
 ### click
