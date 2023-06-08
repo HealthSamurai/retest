@@ -81,6 +81,6 @@ The datafy function allows you to extract the data from your components. Here's 
 ```
 
 ## References
-- [Example](https://github.com/Panthevm/retest/tree/master/example)
-  - [core_test.clj](https://github.com/Panthevm/retest/blob/master/example/test/example/core_test.clj)
-  - [core.cljc](https://github.com/Panthevm/retest/blob/master/example/src/example/core.cljc)
+- [Example](https://github.com/HealthSamurai/retest/tree/main/example)
+  - [core_test.clj](https://github.com/HealthSamurai/retest/tree/main/example/test/example/core_test.clj)
+  - [core.cljc](https://github.com/HealthSamurai/retest/blob/main/example/src/example/core.cljc)
