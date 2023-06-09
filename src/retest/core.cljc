@@ -48,10 +48,8 @@
 
 (defn get-node-id
   [node]
-  (def node node)
   (when (sequential? node)
     (let [tag (first node)]
-      (def tag tag)
       (or (and (keyword? tag)
                (nth (re-find #"(?:#([^\s\.#]+))" (name tag)) 1))
           (:id (get-node-attributes node))))))
@@ -64,12 +62,14 @@
           (get-child-nodes node))))
 
 (defn stringify
-  [node content]
-  (if (or (string? node)
-          (number? node))
-    node
-    (apply str (map #(stringify % content)
-                    (get-child-nodes node)))))
+  ([node]
+   (stringify (render node) ""))
+  ([node content]
+   (if (or (string? node)
+           (number? node))
+     node
+     (apply str (map #(stringify % content)
+                     (get-child-nodes node))))))
 
 (defn get-content
   [node id]
@@ -82,14 +82,15 @@
       (when items
         (let [attributes (get-node-attributes (first items))
               event      (atom {:propagation true})]
-          (when (:on-mouse-down attributes)
-            ((:on-mouse-down attributes) event))
-          (when (:on-mouse-up attributes)
-            ((:on-mouse-up attributes) event))
-          (when (:on-click attributes)
-            ((:on-click attributes) event))
-          (when (:propagation @event)
-            (recur (next items))))))))
+          (when-not (:disabled attributes)
+            (when (:on-mouse-down attributes)
+              ((:on-mouse-down attributes) event))
+            (when (:on-mouse-up attributes)
+              ((:on-mouse-up attributes) event))
+            (when (:on-click attributes)
+              ((:on-click attributes) event))
+            (when (:propagation @event)
+              (recur (next items)))))))))
 
 (defn fill
   [node id text]

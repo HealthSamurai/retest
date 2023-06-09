@@ -9,7 +9,7 @@ Key features include `click`, `fill`, and `datafy` which help emulate and valida
 #### Git deps
 ```edn
 com.health-samurai/retest {:git/url "https://github.com/HealthSamurai/retest.git"
-                           :sha "d5b2732a79d10e9847d5e4b1e208be616d284b96"}}}
+                           :sha "d5b2732a79d10e9847d5e4b1e208be616d284b96"}
 ```
 
 ## Features
