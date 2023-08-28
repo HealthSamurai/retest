@@ -36,8 +36,8 @@
 (defn yourname-display
   []
   (let [yourname (rf/subscribe [::get-name])]
-    [:div {:itemScope ::info}
-     [:b {:itemProp ::name} @yourname]]))
+    [:div {:data-object ::info}
+     [:b {:data-key ::name} @yourname]]))
 
 (defn index
   []

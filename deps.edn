@@ -11,4 +11,8 @@
 
   :repl
   {:extra-deps {cider/cider-nrepl {:mvn/version "0.30.0"}}
-   :main-opts  ["-m" "nrepl.cmdline" "--middleware" "[cider.nrepl/cider-middleware]"]}}}
+   :main-opts  ["-m" "nrepl.cmdline" "--middleware" "[cider.nrepl/cider-middleware]"]}
+
+  :kaocha
+  {:main-opts ["-m" "kaocha.runner" "--config-file" "kaocha.edn"]
+   :extra-deps {lambdaisland/kaocha {:mvn/version "1.85.1342"}}}}}
