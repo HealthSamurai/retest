@@ -36,7 +36,7 @@ com.health-samurai/retest {:git/url "https://github.com/HealthSamurai/retest.git
   (fn [v]
     [form-1 v]))
 
-(sut/render [form-2 1])
+(retest.core/render [form-2 1])
 
 ;; => [:div 1]
 ```
