@@ -37,7 +37,8 @@
 
 (defn get-children
   [node]
-  (when (vector? node)
+  (when (and (vector? node)
+             (not-empty node))
     (if (get-attributes node)
       (subvec node 2)
       (subvec node 1))))
