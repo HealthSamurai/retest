@@ -41,7 +41,9 @@
              (not-empty node))
     (if (get-attributes node)
       (subvec node 2)
-      (subvec node 1))))
+      (if (seq node)
+        (subvec node 1)
+        node))))
 
 (defn datafy
   [node & [data]]
